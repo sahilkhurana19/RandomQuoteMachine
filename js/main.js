@@ -22,7 +22,7 @@ function getQuote() {
 
 function addQuote(response) {
 	$("#quote").html(response.quoteText);
-	$("#quoteAuthor").html(response.quoteAuthor);
+	$("#quoteAuthor").html("<br>" + " - " + response.quoteAuthor);
 }
 
 function errorMsg(err) {
