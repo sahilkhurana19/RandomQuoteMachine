@@ -28,3 +28,4 @@ function addQuote(response) {
 function errorMsg(err) {
 	console.warn('ERROR(' + err.code + '): ' + err.message);
 }
+

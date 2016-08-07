@@ -10,23 +10,59 @@ body {
   color: white;
 }
 
-.quoteBlock {
+#title {
+  margin-top: 2em;
+  font-size: 5em;
   position: relative;
-  color: white;
-  font-weight: bold;
-  font-size: 2em;
-  z-index: 10;
   text-align: center;
-  margin-top: 3em;
+  font-family: 'Monoton', cursive;
+  z-index: 10;
 }
 
-#getQuote {
+#red {
+  color: #FE181E;
+  text-shadow: 0 0 20px red;
+
+}
+
+#green {
+  color: #3FE53F;
+  text-shadow: 0 0 20px green;
+}
+
+#blue {
+  color: #2657C9;
+  text-shadow: 0 0 20px blue;
+}
+
+#quoteCss {
   position: relative;
-  text-align: center; 
+  text-align: center;
+  z-index: 10;
+  margin-top: 3em;
+  font-size: 2em;
+  color: white;
+}
+
+#authorCss {
+  position: relative;
+  color: white;
+  text-align: right;
+  margin-top: 0em;
+  margin-right: 2em;
+  z-index: 10;
+  font-size: 1.5em;
+}
+
+
+#getQuote {
+  position: relative; 
   z-index: 10;
   left: 45%;
   margin-top: 5em;
 }
+
+
 
 #glow {
   position: relative;

@@ -14,11 +14,13 @@
 
 	<!-- Optional theme -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+	<link href="https://fonts.googleapis.com/css?family=Monoton" rel="stylesheet">
 </head>
 <body>
 	<div class="stars"></div>
     <div class="twinkling"></div>
-    <div class="row">
+    <!--div class="row">
     	<div class="col-md-12 col-sm-12 col-lg-12 col-xs-12" id="glow">
     		<p>R</p>
     		<p>A</p>
@@ -41,11 +43,18 @@
     		<p>N</p>
     		<p>E</p>
     	</div>
+    </div-->
+    <div class="row" id="title">
+		<span id="red">Random</span><span id="green">Quote</span><span id="blue">Machine</span>    	
     </div>
 	<div class="row">
-		<div class="col-md-12 col-lg-12 col-xs-12 col-sm-12">
-			<div class="quoteBlock">
+		<div class="col-md-offset-3 col-md-6 col-lg-6 col-xs-12 col-sm-6">
+			<div id="quoteCss">
 				<span id="quote"></span>
+			</div>
+		</div>
+		<div class="col-md-offset-7 col-md-3 ">
+			<div id="authorCss">
 				<span id="quoteAuthor"></span>
 			</div>
 		</div>
