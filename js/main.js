@@ -1,3 +1,10 @@
+$("document").ready(function(){
+	$("#getQuote").click(function() {
+		getQuote();
+	});
+});
+
+
 function getQuote() {
 	$.ajax({
 		url: "http://api.forismatic.com/api/1.0/",
@@ -11,4 +18,13 @@ function getQuote() {
 	})
 	.done(addQuote)
 	.fail(errorMsg);
+}
+
+function addQuote(response) {
+	$("#quote").html(response.quoteText);
+	$("#quoteAuthor").html(response.quoteAuthor);
+}
+
+function errorMsg(err) {
+	console.warn('ERROR(' + err.code + '): ' + err.message);
 }

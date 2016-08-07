@@ -10,11 +10,11 @@ body {
   color: white;
 }
 
-#newQuote {
+#getQuote {
   position: relative;
   text-align: center;
   display: inline-block;
-  z-index: 10
+  z-index: 10;
 }
 
 #glow {
