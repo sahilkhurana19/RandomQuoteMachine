@@ -1,6 +1,6 @@
 body {
   height: 100%;
-  overflow-y: scroll;
+  overflow-y: hidden !important;
   overflow-x: hidden !important;
 }
 
@@ -21,21 +21,33 @@ body {
 
 #red {
   color: #FE181E;
-  text-shadow: 0 0 20px red;
+  text-shadow: 0 0 30px red;
 
 }
 
 #green {
   color: #3FE53F;
-  text-shadow: 0 0 20px green;
+  text-shadow: 0 0 30px green;
+  -webkit-animation: flicker 3s infinite;
+}
+
+@-webkit-keyframes flicker {
+  0% {opacity:0;}
+  9% {opacity:0;}
+  10% {opacity:.5;}
+  13% {opacity:0;}
+  20% {opacity:.5;}
+  25% {opacity:1;}
+  40% {opacity: 0.8;}
 }
 
 #blue {
   color: #2657C9;
-  text-shadow: 0 0 20px blue;
+  text-shadow: 0 0 30px blue;
 }
 
 #quoteCss {
+  font-family: 'Courgette', cursive;
   position: relative;
   text-align: center;
   z-index: 10;
@@ -45,6 +57,7 @@ body {
 }
 
 #authorCss {
+  font-family: 'Courgette', cursive;
   position: relative;
   color: white;
   text-align: right;
@@ -102,6 +115,48 @@ body {
     text-shadow: 0 0 15px;
   }
 }
+
+div .btn-primary:active {
+  background-color: transparent;
+}
+
+div .btn-primary:hover {
+  background-color: transparent;
+}
+
+div .btn-primary:active:focus {
+  background-color: transparent;
+}
+
+div .btn-primary:focus {
+  background-color: transparent;
+}
+
+.btn-primary {
+  font-family: 'Courgette', cursive;
+  border-color: #3FE53F;
+}
+
+.btn.outline {
+    background: none;
+    padding: 12px 22px;
+}
+.btn-primary.outline {
+    border: 2px solid #3FE53F;
+    color: #3FE53F;
+}
+.btn-primary.outline:hover, .btn-primary.outline:focus, .btn-primary.outline:active, .btn-primary.outline.active, .open > .dropdown-toggle.btn-primary {
+    color: #3FE53F;
+    border-color: #3FE53F;
+}
+.btn-primary.outline:active, .btn-primary.outline.active {
+    border-color: #3FE53F;
+    color: #3FE53F;
+    box-shadow: none;
+}
+
+
+
 
 /* ============================================================================================== 
 This copyright notice must be kept untouched in the stylesheet at all times.
