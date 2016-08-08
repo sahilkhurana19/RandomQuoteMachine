@@ -1,7 +1,10 @@
 body {
   height: 100%;
+  overflow: hidden !important;
   overflow-y: hidden !important;
   overflow-x: hidden !important;
+  padding-right: 20px;
+  padding-bottom: 20px;
 }
 
 .try {
@@ -155,7 +158,12 @@ div .btn-primary:focus {
     box-shadow: none;
 }
 
-
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+  #title {
+    font-size: 2em;
+    text-align: center;
+  }
+}
 
 
 /* ============================================================================================== 
@@ -229,7 +237,8 @@ header a, a:visited {
 }
 
 .stars, .twinkling, .clouds {
-  position:fixed;
+  background-size: cover;
+  position: absolute;
   top:0;
   left:0;
   right:0;
