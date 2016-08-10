@@ -17,6 +17,8 @@ function getQuote() {
 		Accept: 'application/json',
 		data: {},
 		success: function(data) {
+			var currentQuote = data.quote;
+			var currentAuthor = data.author;
 			var index = getrandomkey();
 			var quoteColor = colors[index];
 			var shadowColor = shadows[index];
@@ -24,9 +26,14 @@ function getQuote() {
 			$("#quoteCss").css({"color": quoteColor,"text-shadow": "0 0 20px" + shadowColor});
 			$("#quoteAuthor").html("<br>" + " - " + data.author);
 			$("#authorCss").css({"color": quoteColor,"text-shadow": "0 0 20px" + shadowColor});
+
+			$("#shareQuoteURL").attr('href','https://twitter.com/intent/tweet?hashtags=randomQuotes&text=' + encodeURIComponent('"' + currentQuote + '" ' + currentAuthor));
 		}
 	})
 }
+
+
+
 
 
 function errorMsg(err) {
