@@ -7,31 +7,27 @@ $("document").ready(function(){
 var colors = ["#00ffff", "#ff00ff", "#ffff00"];
 var shadows = ["#00d8d8", "#eb00eb", "#ebeb00"]
 
-
 function getQuote() {
 	$.ajax({
-		url: "http://api.forismatic.com/api/1.0/",
-		jsonp: "jsonp",
-		dataType: "jsonp",
-		data: {
-			method: "getQuote",
-			lang: "en",
-			format: "jsonp"
-		} 
+		url: 'https://andruxnet-random-famous-quotes.p.mashape.com/?cat=famous',
+		contentType: 'application/x-www-form-urlencoded',
+		type: 'POST',
+		headers: {'X-Mashape-Key': 'GDfWmv6WI0mshs8rzl2AhvC7fe2cp1LLt5gjsnuCPN16a35TUK'},
+		dataType: "json",
+		Accept: 'application/json',
+		data: {},
+		success: function(data) {
+			var index = getrandomkey();
+			var quoteColor = colors[index];
+			var shadowColor = shadows[index];
+			$("#quote").html(data.quote);
+			$("#quoteCss").css({"color": quoteColor,"text-shadow": "0 0 20px" + shadowColor});
+			$("#quoteAuthor").html("<br>" + " - " + data.author);
+			$("#authorCss").css({"color": quoteColor,"text-shadow": "0 0 20px" + shadowColor});
+		}
 	})
-	.done(addQuote)
-	.fail(errorMsg);
 }
 
-function addQuote(response) {
-	var index = getrandomkey();
-	var quoteColor = colors[index];
-	var shadowColor = shadows[index];
-	$("#quote").html(response.quoteText);
-	$("#quoteCss").css({"color": quoteColor,"text-shadow": "0 0 20px" + shadowColor});
-	$("#quoteAuthor").html("<br>" + " - " + response.quoteAuthor);
-	$("#authorCss").css({"color": quoteColor,"text-shadow": "0 0 20px" + shadowColor});
-}
 
 function errorMsg(err) {
 	console.warn('ERROR(' + err.code + '): ' + err.message);
